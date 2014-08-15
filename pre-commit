@@ -2,7 +2,7 @@
 git preserve-permissions --check
 return_code="$?"
 if [ "${return_code}" != "0" ]; then
-    dbfile=$(git config --bool --get preserve-permissions.file)
+    dbfile=$(git config --get preserve-permissions.file)
     autosave=$(git config --bool --get preserve-permissions.autosave)
     autosavePatch=$(git config --bool --get preserve-permissions.autosavePatch)
     [ -z "${dbfile}" ] && dbfile=".git-preserve-permissions"
